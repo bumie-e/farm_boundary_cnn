@@ -97,6 +97,7 @@ if __name__ == "__main__":
             model=field_detector,
             path=args.train_path,
         )
+    print('Train path ------------------------------', args.train_path)
     # Test, if requested
     if args.test:
         evaluate(
