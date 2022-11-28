@@ -82,7 +82,7 @@ if __name__ == "__main__":
     parser.add_argument("--train", default=0, type=int)
     parser.add_argument(
     #    "--train-path", default=Path(__file__).parent / "../../data/augmented", type=str
-        "--train-path", default="/kaggle/input/augumented/augmented"
+        "--train-path", default=Path(__file__).parent / "kaggle/input/augumented/augmented"
     )
     parser.add_argument("--test", default=1, type=int)
     parser.add_argument("--test-path", default=Path(__file__).parent / "../../data/test", type=str)
