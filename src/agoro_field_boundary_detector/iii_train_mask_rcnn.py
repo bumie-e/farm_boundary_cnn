@@ -91,8 +91,8 @@ if __name__ == "__main__":
     field_detector = FieldBoundaryDetector(model_path=args.model_path)
 
     # Train, if requested
-    if args.train:
-        train(
+    #if args.train:
+    train(
             model=field_detector,
             path=args.train_path,
         )

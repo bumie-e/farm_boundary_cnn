@@ -332,6 +332,7 @@ class FieldBoundaryDetector:
         #if self.path.is_file():
         #model = MaskRCNN()
         self.model= torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
+        print('Model itself -------------------------------------------------------')
         # self.model = torch.load(self.path, map_location=self.device)  # type: ignore
         return True
         #return False
