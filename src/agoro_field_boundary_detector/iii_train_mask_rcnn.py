@@ -82,7 +82,7 @@ if __name__ == "__main__":
     parser.add_argument("--train", default=0, type=int)
     parser.add_argument(
     #    "--train-path", default=Path(__file__).parent / "../../data/augmented", type=str
-        "--train-path", default=Path(__file__).parent / "kaggle/input/augumented/augmented", type=str
+        "--train-path", default="kaggle/input/augumented/augmented", type=str
     )
     parser.add_argument("--test", default=1, type=int)
     parser.add_argument("--test-path", default=Path(__file__).parent / "../../data/test", type=str)
@@ -90,6 +90,7 @@ if __name__ == "__main__":
 
     # Load in the model
     field_detector = FieldBoundaryDetector(model_path=args.model_path)
+    print('Train path ------------------------------', args.train_path)
 
     # Train, if requested
     #if args.train:
@@ -97,7 +98,7 @@ if __name__ == "__main__":
             model=field_detector,
             path=args.train_path,
         )
-    print('Train path ------------------------------', args.train_path)
+    
     # Test, if requested
     if args.test:
         evaluate(
