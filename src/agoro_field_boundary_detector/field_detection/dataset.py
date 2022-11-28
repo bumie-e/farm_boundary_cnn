@@ -19,15 +19,21 @@ class Dataset(torch.utils.data.Dataset):  # type: ignore
     ) -> None:
         """Initialise the dataset."""
         self.path = path
-        self.fields_path = self.path / "fields"
-        self.masks_path = self.path / "masks"
+        # self.fields_path = self.path / "fields"
+        # self.masks_path = self.path / "masks"
+        self.fields_path = "/kaggle/input/augumented/augmented/fields"
+        self.masks_path = "/kaggle/input/augumented/augmented/masks"
+        # self.tags = [Path(x).with_suffix("").name for x in glob(str(self.fields_path / "*"))]
         self.tags = [Path(x).with_suffix("").name for x in glob(str(self.fields_path / "*"))]
 
     def __getitem__(self, idx: int) -> Any:
         """Get the item at the given index from the dataset."""
         # load image and mask under specified index
-        field = np.array(Image.open(self.fields_path / f"{self.tags[idx]}.png"))
-        mask = np.array(Image.open(self.masks_path / f"{self.tags[idx]}.png"))
+        # field = np.array(Image.open(self.fields_path / f"{self.tags[idx]}.png"))
+        # mask = np.array(Image.open(self.masks_path / f"{self.tags[idx]}.png"))
+
+        field = np.array(Image.open("/kaggle/input/augumented/augmented/fields"+f"{self.tags[idx]}.png"))
+        mask = np.array(Image.open("/kaggle/input/augumented/augmented/masks"+ f"{self.tags[idx]}.png"))
 
         # Mask are identified by their unique ID (zero for background)
         obj_ids = np.unique(mask)  # Sorted
