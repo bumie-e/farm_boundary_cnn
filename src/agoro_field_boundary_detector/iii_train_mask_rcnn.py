@@ -94,6 +94,7 @@ if __name__ == "__main__":
 
     # Train, if requested
     #if args.train:
+    print('Directory contents ---------- ', os.listdir(Path(__file__).parent / "data/augmented/fields"))
     train(
             model=field_detector,
             path=args.train_path,
