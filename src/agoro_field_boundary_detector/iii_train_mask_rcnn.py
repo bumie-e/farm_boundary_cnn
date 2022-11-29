@@ -77,11 +77,11 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--model-path", default=Path(__file__).parent / "../../models/mask_rcnn/mask_rcnn_coco.pth", type=str
+        "--model-path", default=Path(__file__).parent / "../../models/mask_rcnn", type=str
     )
     parser.add_argument("--train", default=0, type=int)
     parser.add_argument(
-        "--train-path", default=Path(__file__).parent / "../../data/augmented/augmented", type=str
+        "--train-path", default=Path(__file__).parent / "../../data/augmented", type=str
     #    "--train-path", "/kaggle/input/augumented/augmented", type=str
     )
     parser.add_argument("--test", default=1, type=int)
