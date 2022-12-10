@@ -49,7 +49,7 @@ TEMP*
 
 # No images and pdf
 *.gif
-*.jpg
+#*.jpg
 *.svg
 *.pdf
 
