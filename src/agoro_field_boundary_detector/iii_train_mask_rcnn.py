@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--model-path", default=Path(__file__).parent / "../../models/mask_rcnn", type=str
+        "--model-path", default=Path(__file__).parent / "models/mask_rcnn", type=str
     )
     parser.add_argument("--train", default=0, type=int)
     parser.add_argument(
@@ -106,5 +106,5 @@ if __name__ == "__main__":
             model=field_detector,
             path=args.test_path,
             n_show=10,
-            write_path=Path(__file__).parent / "../../data/test_results",
+            write_path=Path(__file__).parent / "data/test_results",
         )
