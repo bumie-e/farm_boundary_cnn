@@ -90,6 +90,6 @@ models/
 !models/__init__.py
 
 # Generated data
-data/augmented
+#data/augmented
 data/test
 data/test_results
