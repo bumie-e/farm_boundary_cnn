@@ -161,7 +161,8 @@ class FieldBoundaryDetector:
         params = [p for p in self.model.parameters() if p.requires_grad]  # type: ignore
         optimizer = torch.optim.SGD(
             params,
-            lr=0.005,
+            #lr=0.005,
+            lr=0.009,
             momentum=0.9,
             weight_decay=0.0005,
         )

@@ -29,7 +29,7 @@ class Dataset(torch.utils.data.Dataset):  # type: ignore
     def __getitem__(self, idx: int) -> Any:
         """Get the item at the given index from the dataset."""
         # load image and mask under specified index
-        field = np.array(Image.open(self.fields_path / f"{self.tags[idx]}.png"))
+        field = np.array(Image.open(self.fields_path / f"{self.tags[idx]}.jpeg"))
         mask = np.array(Image.open(self.masks_path / f"{self.tags[idx]}.png"))
 
         # field = np.array(Image.open("/kaggle/input/augumented/augmented/fields"+f"{self.tags[idx]}.png"))
