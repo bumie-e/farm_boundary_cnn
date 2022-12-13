@@ -343,5 +343,5 @@ class FieldBoundaryDetector:
         self.model.to(torch.device("cpu"))  # type: ignore
         torch.save(
             self.model,
-            self.path,
+            #self.path,
         )
