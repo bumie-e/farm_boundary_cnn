@@ -118,7 +118,7 @@ class FieldBoundaryDetector:
         self,
         dataset: Dataset,
         n_epoch: int = 20,
-        batch_size: int = 1,
+        batch_size: int = 16,
         n_workers: int = 0,
         val_frac: float = 0.1,
         early_stop: bool = True,
@@ -162,7 +162,7 @@ class FieldBoundaryDetector:
         optimizer = torch.optim.SGD(
             params,
             #lr=0.005,
-            lr=0.009,
+            lr=0.01,
             momentum=0.9,
             weight_decay=0.0005,
         )
