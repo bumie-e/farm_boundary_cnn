@@ -219,7 +219,7 @@ class FieldBoundaryDetector:
 
         # Revert back to best-performing model and delete temporal files
         self.model = torch.load(temp_folder / f"{best_epoch}")  # type: ignore
-        #rmtree(temp_folder)
+        rmtree(temp_folder)
         self.save()
 
     def test(
