@@ -341,6 +341,10 @@ class FieldBoundaryDetector:
     def save(self) -> None:
         """Save the model."""
         self.model.to(torch.device("cpu"))  # type: ignore
+        temp_folder = Path.cwd() / f"{getrandbits(128)}"
+        self.path = temp_folder
+        temp_folder.mkdir(exist_ok=False, parents=True)
+        # self.path = temp_folder
         torch.save(
             self.model,
             self.path,
