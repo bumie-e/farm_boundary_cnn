@@ -346,6 +346,5 @@ class FieldBoundaryDetector:
         temp_folder.mkdir(exist_ok=False, parents=True)
         # self.path = temp_folder
         torch.save(
-            self.model,
-            self.path,
+            self.model
         )
